@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+@property --rotate{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+:root{
+    --bgcolor: rgb(5,147,147);
+}
+
+@keyframes rotatebg{
+ from{
+    --rotate : 0deg
+ }
+ to{
+    --rotate: 360deg
+ }
+}
+.box{
+    width: 20rem;
+    height: 25rem;
+    border: 6px solid rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+ 
+    border-radius: 15px;
+  
+}
+.box:hover{
+  background: linear-gradient(black) padding-box,
+    conic-gradient(from var(--rotate),black,black, var(--bgcolor),black,black ) border-box;
+    animation: rotatebg 3s linear infinite;
+      box-shadow: 0px 0px 50px var(--bgcolor);
+}
+.box:hover h1, .box:hover p{
+    color: var(--bgcolor) ;
+     
+}
+.box p {
+    margin-top: 10px;
+    text-align: center;
+}
